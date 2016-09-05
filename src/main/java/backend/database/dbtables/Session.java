@@ -43,6 +43,7 @@ public class Session {
         while (results.next()) {
             System.out.println(results.getString("FilmName"));
         }
+        results.close();
     }
 
     public int getSessionByDate(String date) throws SQLException {
@@ -51,6 +52,7 @@ public class Session {
         while (results.next()) {
             System.out.println(results.getString("FilmName"));
         }
+        results.close();
         return id;
     }
 
@@ -60,6 +62,7 @@ public class Session {
         while (result.next()) {
             System.out.println(result.getString("Date"));
         }
+        result.close();
         return id;
     }
 }

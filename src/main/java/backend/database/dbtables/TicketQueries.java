@@ -53,6 +53,7 @@ public class TicketQueries {
             System.out.println(results.getString("Date"));
             System.out.println(results.getString("Price"));
         }
+        results.close();
 
     }
 }
