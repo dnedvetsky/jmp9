@@ -41,6 +41,7 @@ public class Session {
     public void displaySessions(String date) throws SQLException {
         ResultSet results = tableManager.executeGet("SELECT * FROM Sessions WHERE Date = '" + date + "';");
         while (results.next()) {
+            System.out.println(results.getString("Added session for a film: "));
             System.out.println(results.getString("FilmName"));
         }
         results.close();

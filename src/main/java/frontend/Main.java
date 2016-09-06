@@ -22,7 +22,7 @@ public class Main {
         do {
             System.out.println();
             System.out.println("Please specify an option you wish: 1) Add session; 2) List all sessions; " +
-                    "3) Book ticket; 4) Booked ticket");
+                    "3) Book ticket; 4) Booked ticket; 5) Remove booked ticket");
             switch (input.nextLine()) {
                 case "1":
                     addSession();
