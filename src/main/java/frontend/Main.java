@@ -38,6 +38,10 @@ public class Main {
                     System.out.println("Specify ticket number");
                     appContext.getBean(AddBookingService.class).getBookedTicket(input.nextLine());
                     break;
+                case "5":
+                    System.out.println("Specify booking number to remove ticket");
+                    appContext.getBean(AddBookingService.class).removeBookedTicket(input.nextLine());
+                    break;
                 case "exit":
                     ((AnnotationConfigApplicationContext) appContext).close();
                     return;

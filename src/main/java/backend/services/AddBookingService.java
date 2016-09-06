@@ -33,6 +33,14 @@ public class AddBookingService {
         }
     }
 
+    public void removeBookedTicket(String bookingNo) {
+        try {
+            ticketQueries.removeTicket(ticketQueries.getTicket(bookingNo));
+        } catch (SQLException e) {
+
+        }
+    }
+
     public void correctlyBookTicket(String date, String bookingNo, Integer place,
                                     Person booker, Integer price) throws SQLException {
         Integer id = session.getSessionByDate(date);

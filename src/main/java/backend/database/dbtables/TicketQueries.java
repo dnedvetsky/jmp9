@@ -40,10 +40,14 @@ public class TicketQueries {
         return results;
     }
 
-    public void getTicket(String bookingNo) throws SQLException {
+    public void removeTicket(int id) {
+        tableManager.executeDataTableQuery("DELETE FROM Tickets WHERE ID = " + id);
+    }
+
+    public Integer getTicket(String bookingNo) throws SQLException {
         ResultSet results = tableManager.executeGet("SELECT * FROM Tickets, " +
                 "Sessions WHERE Tickets.SessionID=Sessions.id AND Tickets.BookingNumber = '" + bookingNo + "';");
-
+        int id = results.getInt(1);
         while (results.next()) {
             System.out.println(results.getString("BookingNumber"));
             System.out.println(results.getString("Place"));
@@ -54,6 +58,6 @@ public class TicketQueries {
             System.out.println(results.getString("Price"));
         }
         results.close();
-
+        return id;
     }
 }
